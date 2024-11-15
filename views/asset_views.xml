@@ -1,0 +1,49 @@
+<!-- asset_depreciation/views/asset_views.xml -->
+<odoo>
+    <record id="view_asset_form" model="ir.ui.view">
+        <field name="name">asset.depreciation.form</field>
+        <field name="model">asset.depreciation</field>
+        <field name="arch" type="xml">
+            <form string="Asset Depreciation">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="purchase_date"/>
+                        <field name="cost"/>
+                        <field name="depreciation_method"/>
+                        <field name="useful_life"/>
+                        <field name="salvage_value"/>
+                    </group>
+                    <group>
+                        <field name="depreciation_value" readonly="1"/>
+                        <field name="accumulated_depreciation" readonly="1"/>
+                        <field name="current_value" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_asset_tree" model="ir.ui.view">
+        <field name="name">asset.depreciation.tree</field>
+        <field name="model">asset.depreciation</field>
+        <field name="arch" type="xml">
+            <tree string="Assets">
+                <field name="name"/>
+                <field name="cost"/>
+                <field name="depreciation_method"/>
+                <field name="useful_life"/>
+                <field name="current_value"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_asset_depreciation" model="ir.actions.act_window">
+        <field name="name">Assets</field>
+        <field name="res_model">asset.depreciation</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_asset_root" name="Asset Management"/>
+    <menuitem id="menu_asset_depreciation" name="Assets" parent="menu_asset_root" action="action_asset_depreciation"/>
+</odoo>

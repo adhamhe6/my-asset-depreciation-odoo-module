@@ -1,0 +1,19 @@
+<!-- asset_depreciation/data/asset_data.xml -->
+<odoo>
+    <record id="asset_depreciation_1" model="asset.depreciation">
+        <field name="name">Office Laptop</field>
+        <field name="purchase_date">2022-01-01</field>
+        <field name="cost">1200</field>
+        <field name="depreciation_method">straight_line</field>
+        <field name="useful_life">5</field>
+        <field name="salvage_value">200</field>
+    </record>
+    <record id="asset_depreciation_2" model="asset.depreciation">
+        <field name="name">Office Printer</field>
+        <field name="purchase_date">2021-06-01</field>
+        <field name="cost">500</field>
+        <field name="depreciation_method">declining_balance</field>
+        <field name="useful_life">7</field>
+        <field name="salvage_value">50</field>
+    </record>
+</odoo>
